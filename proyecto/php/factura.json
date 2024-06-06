@@ -1,0 +1,43 @@
+[
+    {
+      "codigo_producto": 1,
+      "nombre_producto": "coca-cola",
+      "unidades_caja": 6,
+      "caja_facturada": 2,
+      "precio_unidades": 0.59,
+      "fecha_entrada": "2023-06-08"
+    },
+    {
+      "codigo_producto": 2,
+      "nombre_producto": "sprite",
+      "unidades_caja": 6,
+      "caja_facturada": 1,
+      "precio_unidades": 0.59,
+      "fecha_entrada": "2023-06-08"
+    },
+    {
+      "codigo_producto": 4,
+      "nombre_producto": "pepsi",
+      "unidades_caja": 6,
+      "caja_facturada": 3,
+      "precio_unidades": 0.59,
+      "fecha_entrada": "2023-06-08"
+    },
+    {
+      "codigo_producto": 6,
+      "nombre_producto": "aquarius",
+      "unidades_caja": 6,
+      "caja_facturada": 2,
+      "precio_unidades": 0.59,
+      "fecha_entrada": "2023-06-08"
+    },
+    {
+      "codigo_producto": 10,
+      "nombre_producto": "nestea",
+      "unidades_caja": 6,
+      "caja_facturada": 4,
+      "precio_unidades": 0.59,
+      "fecha_entrada": "2023-06-08"
+    }
+  ]
+  

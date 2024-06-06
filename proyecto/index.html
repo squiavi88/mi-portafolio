@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/estilos.css">
+    <title>App</title>
+
+</head>
+
+<body>
+
+    <div>
+        <header class="d-flex justify-content-between align-items-baseline" id="header">
+            <div class="text-white">
+                <button id="btn" class="mx-2">
+                    <i class="bi bi-list fs-5"></i>
+                </button>
+                <i class="bi bi-plugin fs-5 ms-2"></i>
+                <span class="fs-5 ">AppZonE</span>
+            </div>
+            <div class="text-white"> </i>
+                <div class="dropdown">
+                    <button class="dropdown-toggle me-3" type="button" data-bs-toggle="dropdown" aria-expanded="false"
+                        id="btn">
+                        <span class="user"></span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><button class="dropdown-item d-flex justify-content-center" type="button"
+                                id="log-out"><span>Cerrar Sesion</span></button></li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+    </div>
+
+    <div class="d-flex">
+        <div id="sidebar" class="frm-1" style="  background-color: #222d32;">
+            <ul class="list-unstyled text-white">
+                <li><span class="my-1 mx-3 ">Factura</span></li>
+                <li><button class="my-1 activo" type="submit" name="home" value="home" id="home">
+                    <i class="bi bi-house mx-2"></i>inicio
+                </button>
+                <li><button class="my-1" type="submit" name="cargar" value="cargar" id="cargar">
+                        <i class="bi bi-download mx-2"></i>Cargar Factura
+                    </button>
+                </li>
+                <li><button type="submit" name="mostrar" value="mostrar" id="mostrar" class="my-1"><i
+                            class="bi bi-clipboard2 mx-2"></i> Revisar Factura </button></li>
+
+                <li><button type="submit" name="verificar" value="verificar" id="verificar" class="my-1">
+                        <i class="bi bi-clipboard2-check mx-2"></i>Repasar Factura</button></li>
+                <li><button class=" " type="button" data-bs-toggle="collapse" data-bs-target="#controlador"
+                        aria-expanded="false" aria-controls="controlador" class="my-1">
+                        <i class="bi bi-clipboard mx-2"></i>Factura Faltas <i class="bi bi-chevron-compact-down"></i>
+                    </button>
+                    <ul class="list-unstyled collapse" id="controlador">
+                        <li>
+                            <button type="submit" id="faltas"> <i class="bi bi-clipboard-x mx-2"></i>Productos
+                                Faltantes</button>
+                        </li>
+                        <li>
+                            <button type="submit" id="devolucion"> <i class="bi bi-clipboard-plus mx-2"></i>Productos
+                                Extras</button>
+                        </li>
+                    </ul>
+                </li>
+                <li><span class="my-2 mx-3">Productos</span></li>
+                <li><button type="submit" id="consultar" class="my-1"><i class="bi bi-search mx-2"></i>
+                        Consulta Productos
+                    </button></li>
+                <li><button type="submit" id="mod" class="my-1 admin" style="display: none;"><i
+                            class="bi bi-pencil-square mx-2"></i>
+                        Modificar Productos </button></li>
+            </ul>
+        </div>
+
+        <div class="main w-100">
+            <!--Verificar los productos-->
+
+            <div id="frm-2" style="display: none;">
+                <h3 class="m-3">Productos:</h3>
+                <div class="row m-3 gy-3">
+
+                    <div class="col-sm-4 col-md-3 col-lg-3">
+                        <input id="codigo" type="text" class="form-control" placeholder="Codigo" aria-label="Codigo">
+                    </div>
+                    <div class="col-sm-4 col-md-3 col-lg-3">
+                        <input id="bulto" type="text" class="form-control" placeholder="N° Caja" aria-label="Caja">
+
+                    </div>
+                    <div class="col-sm-4 col-md-6 col-lg-6 ">
+                        <button class="btn btn-success" type="button" id="cargar">Cargar</button>
+                        <button class="btn btn-primary" type="button" id="filtrar">Filtrar</button>
+                    </div>
+
+                </div>
+                <div class="m-5" id="frm-r">
+                </div>
+
+            </div>
+            <!--Consulta productos-->
+            <div id="frm-4">
+                <div id="consulta" style="display: none;">
+                    <h3 class="m-3">Consultar Productos:</h3>
+                    <div class="row m-3 gy-3">
+                        <div class="col-sm col-md-3 col-lg-3">
+                            <input type="text" id="cod" class="form-control" placeholder="Codigo" aria-label="Codigo">
+                        </div>
+                        <div class=" col-sm col-md-3 col-lg-3">
+                            <button class="btn btn-success" type="button" id="consultar">Consultar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--Modificar productos-->
+            <div id="frm-5">
+                <div id="modif" style="display: none;">
+                    <h3 class="m-3">Modificar Stock:</h3>
+                    <div class="row m-3 gy-3">
+                        <div class="col-sm col-md-3 col-lg-3">
+                            <input type="text" id="codigo" class="form-control cod" placeholder="Codigo"
+                                aria-label="Codigo">
+                        </div>
+                        <div class=" col-sm col-md-3 col-lg-3">
+                            <button class="btn btn-success" type="button" id="modificar">Modificar</button>
+                        </div>
+                    </div>
+
+                    <div class="m-5" id="frm-m">
+                    </div>
+                </div>
+            </div>
+
+            <!--Mostrar los productos Faltantes y extras-->
+            <div id="frm-3">
+                <div id="ctr-f" style="display: none;">
+                    <h3 class="m-3">Productos Faltantes:</h3>
+                    <div class="row m-3 gy-3">
+                        <div class="col-sm col-md-3 col-lg-3">
+                            <input type="date" id="fecha-f" class="form-control" placeholder="Fecha" aria-label="Fecha">
+                        </div>
+                        <div class=" col-sm col-md-3 col-lg-3">
+                            <button class="btn btn-success" type="button" id="verFaltas">Ver Faltas</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="ctr-d" style="display: none;">
+                    <h3 class="m-3">Productos Extra:</h3>
+                    <div class="row m-3 gy-3">
+                        <div class="col-sm col-md-3 col-lg-3">
+                            <input type="date" id="fecha-d" class="form-control" placeholder="Fecha" aria-label="Fecha">
+                        </div>
+                        <div class=" col-sm col-md-3 col-lg-3">
+                            <button class="btn btn-success" type="button" id="devolucion">Ver Extras</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <span id="article-1" class="m-3"></span>
+        </div>
+    </div>
+    <script>
+        document.getElementById('btn').addEventListener('click', () => {
+            document.getElementById('sidebar').classList.toggle('active')
+        });
+
+        let navbar = document.querySelector("#sidebar").querySelectorAll("button")
+
+        navbar.forEach(element => {
+            element.addEventListener("click", function () {
+                navbar.forEach(btn => btn.classList.remove("activo"))
+                this.classList.add("activo")
+            })
+
+        })
+    </script>
+    <script src="js/yuri.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+
+</html>

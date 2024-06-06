@@ -1,0 +1,80 @@
+@font-face {
+    font-family: "yuri";
+    src: url(../assets/fonts/Roboto-Italic.ttf);
+  }
+  body{
+    font-family: "yuri";
+  }
+  #sidebar {
+    min-width: 250px;
+    max-width: 250px;
+    min-height: 100vh;
+    transition: all, 0.2s;
+  }
+  
+  #btn {
+    border: 0;
+    color: white;
+  }
+  
+  #header,
+  #btn {
+    background-color: #367fa9;
+  }
+  
+  #sidebar {
+    background-color: #222d32;
+  }
+  ul li{
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+  }
+  
+  ul li button {
+    color: white;
+    background-color: #222d32;
+    text-decoration: none;
+    border: 0;
+    text-align:left;
+  
+  }
+  ul li button:hover {
+    color: #222d32;
+    background-color: white;
+  }
+  
+  ul li button.activo {
+    color: #222d32;
+    background-color: white;
+  }
+  
+  
+  @media screen and (max-width: 787px) {
+    #sidebar {
+      margin-left: -250px;
+      position: fixed;
+      z-index: 1;
+    }
+  
+    #sidebar.active {
+      margin-left: 0;
+    }
+  }
+  @media screen and (min-width: 787px) {
+    #sidebar.active {
+      margin-left: -250px;
+    }
+  }
+  /**************LOGIN*************/
+  .bg{
+    background-color: #222d32;
+
+  }
+  
+  /*************sweetalert********/
+
+  .botonConfirmacion{
+    background-color: #198754;
+  }
+  
