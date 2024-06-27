@@ -10,4 +10,6 @@ Yuri Hernandez Rodriguez
 [![portfolio](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://projectyuri.000webhostapp.com/)
 ## Installation
 This project doesn't need Installation. You can log in with the user "yuri" and password "0811". The function of the application is to filter products that have not been received, but have been invoiced and vice versa. This will be done through product codes.
+## 🛠 Skills
+Javascript, HTML, PHP, CSS, Bootstrap
     
